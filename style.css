@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===========body style============= */
+
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgba(225, 232, 236, 0.733);
+}
+
+/* =========head title style======== */
+.head-title{
+    text-align: center;
+    margin:30px 0;
+}
+
+#money-title{
+    color: darkred;
+}
+
+/* ==============
+container section
+====================== */
+.container{
+    width: 90%;
+    margin:20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.img-content{
+    width:calc(40% - 30px);
+    margin-right:25px;
+}
+.img-content img{
+    width: 100%;
+}
+
+.income-from{
+    width: 60%;
+    text-align: center;
+    background-color: white;
+}
+#income-title{
+    margin: 25px auto;
+}
+
+.income-from input{
+    width:70%;
+    padding:10px;
+    border:1px solid black;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
+
+#expenses{
+    margin:20px auto;
+    font-weight: bold;
+}
