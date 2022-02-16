@@ -1,63 +1,51 @@
+
+function inputValue(id) {
+    let inputText = document.getElementById(id);
+    let inputAmount = parseFloat(inputText.value);
+    return inputAmount;
+}
+
+function selectFunction(select) {
+    let selectTotal = document.getElementById(select);
+    return selectTotal;
+}
+
 document.getElementById("calculate").addEventListener("click", function () {
+    let incomeInputAmount = inputValue("income");
+    let foodInputAmount = inputValue("food");
+    let rentInputAmount = inputValue("rent");
+    let clothesAmount = inputValue("clothes");
+    let totalExpensText = selectFunction("total-expenses");
+    // totalExpenses add
+    let totalExpensAdd = foodInputAmount + rentInputAmount + clothesAmount;
+    let totalExpensAmount = totalExpensText.innerText = totalExpensAdd;
 
-    let incomeInputText = document.getElementById("income");
-    let incomeInputAmount = parseFloat(incomeInputText.value);
-
-    let foodInputText = document.getElementById("food");
-
-    let foodInputAmount = parseFloat(foodInputText.value);
-
-    let rentInputText = document.getElementById("rent");
-    let rentAmount = parseFloat(rentInputText.value);
-
-    let clothesText = document.getElementById("clothes");
-    let clothesAmount = parseFloat(clothesText.value);
-
-    let totalExpensesText = document.getElementById("total-expenses");
-
-    let totalExpensesAmount = parseFloat(totalExpensesText.innerText);
-
-    let TotalAmountADD = foodInputAmount + rentAmount + clothesAmount;
-
-    let totalNewAmount = totalExpensesText.innerText = TotalAmountADD;
-
-    let balanceText = document.getElementById("balance");
-    let balanceAmount = parseFloat(balanceText);
-
-    let newBalanceAmount = incomeInputAmount - totalNewAmount;
-
-    let mainBalance = balanceText.innerText = newBalanceAmount;
+    let balanceText = selectFunction("balance");
+    // balance  update
+    let BalanceAmount = incomeInputAmount - totalExpensAmount;
+    balanceText.innerText = BalanceAmount;
 })
-
 
 document.getElementById("save-button").addEventListener("click", function () {
 
-    let incomeInputText = document.getElementById("income");
-    let incomeInputAmount = parseFloat(incomeInputText.value);
+    let incomeInputAmount = inputValue("income");
 
+    let saveInputAmount = inputValue("save");
 
-    let savingInputText = document.getElementById("save");
-    let saveInputAmount = parseFloat(savingInputText.value);
+    let savingAmountText = selectFunction("saving-amount")
+    // saving amount
+    let savingAmount = incomeInputAmount * saveInputAmount / 100;
 
-    let savingAmountText = document.getElementById("saving-amount");
-    let savingAmount = parseFloat(savingAmountText.innerText);
-    let newSavingAmount = incomeInputAmount / saveInputAmount;
+    let updateSavingAmount = savingAmountText.innerText = savingAmount;
 
-    let updateSavingAmount = savingAmountText.innerText = newSavingAmount;
-    console.log(saveInputAmount);
-
-    // Remaining Balance
-
-    let balanceText = document.getElementById("balance");
+    let balanceText = selectFunction("balance");
 
     let balance = parseFloat(balanceText.innerText);
 
-    let remainingBalanceTExt = document.getElementById("remaining-balance");
+    let remainingText = selectFunction("remaining-balance");
+    // Remaining Balance
+    let remainingBalance = balance - updateSavingAmount;
 
-    let remainingBalance = parseFloat(remainingBalanceTExt.innerText);
-
-    let newRemainingBalance = balance - updateSavingAmount;
-
-    remainingBalanceTExt.innerText = newRemainingBalance;
+    remainingText.innerText = remainingBalance;
 
 })
