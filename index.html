@@ -19,24 +19,61 @@
 <main>
     <section>
         <div class="container">
-            <!-- img content -->
+            <!-- img content start -->
             <div class="img-content">
                 <img src="img/digital-money-online-saving-deposit-concept-blank-space-phone_255625-429.jpg" alt="">
             </div>
-            <!-- income form -->
+            <!-- income form  start-->
             <div class="income-from">
                 <h2 id="income-title">Income</h2>
                 <label for="income">
                     <span>Income : </span>
                 </label>
-                <input type="text" name="" id="income" placeholder="0000">
+                <input type="text" name="" id="income" placeholder="10000">
                 <p id="expenses">Expenses</p>
+                <label for="food"><span>Food : </span></label>
+                <input type="text" name="" placeholder="3000" id="food">
+                <br>
+                <br>
+                <label for="rent"><span>Rent : </span></label>
+                <input type="text" name="" id="rent" placeholder="2000">
+                <br><br>
+                <label for="clothes"><span>Clothes : </span></label>
+                <input type="text" name="" id="clothes" placeholder="500">
+                <br><br>
+                <button id="calculate">Calculate</button>
+                <!-- calculate-total start -->
+                <div class="Calculate-total">
+                    <h4>Total Expenses: <span>200</span></h4>
+                    <h4>Balance: <span>500</span></h4>
+                </div>
+                <!-- save balance start -->
+                <div class="total-save-balance">
+                    <div class="save-balance">
+                        <div class="save-balance-input">
+                            <label for="save"><span>Save : </span></label>
+                            <input type="text" name="" id="save" placeholder="20">
+                        </div>
+                        <div class="save-balance-modulus">
+                            <span>%</span>
+                        </div>
+                        <div>
+                            <button id="save-button">Save</button>
+                        </div>
+                    </div>
+                    <!-- Saving Amount start -->
+                    <div class="saving-amonut">
+                        <h4>Saving Amount: <span>2000</span></h4>
+                        <h4>Remaining Balance:<span>2500</span> </h4>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 </main>
 
 <body>
+    <!-- javascript link -->
     <script src="app.js"></script>
 </body>
 
