@@ -30,3 +30,34 @@ document.getElementById("calculate").addEventListener("click", function () {
 })
 
 
+document.getElementById("save-button").addEventListener("click", function () {
+
+    let incomeInputText = document.getElementById("income");
+    let incomeInputAmount = parseFloat(incomeInputText.value);
+
+
+    let savingInputText = document.getElementById("save");
+    let saveInputAmount = parseFloat(savingInputText.value);
+
+    let savingAmountText = document.getElementById("saving-amount");
+    let savingAmount = parseFloat(savingAmountText.innerText);
+    let newSavingAmount = incomeInputAmount / saveInputAmount;
+
+    let updateSavingAmount = savingAmountText.innerText = newSavingAmount;
+    console.log(saveInputAmount);
+
+    // Remaining Balance
+
+    let balanceText = document.getElementById("balance");
+
+    let balance = parseFloat(balanceText.innerText);
+
+    let remainingBalanceTExt = document.getElementById("remaining-balance");
+
+    let remainingBalance = parseFloat(remainingBalanceTExt.innerText);
+
+    let newRemainingBalance = balance - updateSavingAmount;
+
+    remainingBalanceTExt.innerText = newRemainingBalance;
+
+})
