@@ -18,12 +18,16 @@ document.getElementById("calculate").addEventListener("click", function () {
     let totalExpensText = selectFunction("total-expenses");
     // totalExpenses add
     let totalExpensAdd = foodInputAmount + rentInputAmount + clothesAmount;
-    let totalExpensAmount = totalExpensText.innerText = totalExpensAdd;
+    if (incomeInputAmount > 0 && incomeInputAmount > totalExpensAdd) {
+        let totalExpensAmount = totalExpensText.innerText = totalExpensAdd;
 
-    let balanceText = selectFunction("balance");
-    // balance  update
-    let BalanceAmount = incomeInputAmount - totalExpensAmount;
-    balanceText.innerText = BalanceAmount;
+        let balanceText = selectFunction("balance");
+        // balance  update
+        let BalanceAmount = incomeInputAmount - totalExpensAmount;
+        balanceText.innerText = BalanceAmount;
+    } else {
+        alert("Invalid Amount");
+    }
 })
 
 document.getElementById("save-button").addEventListener("click", function () {
@@ -42,6 +46,10 @@ document.getElementById("save-button").addEventListener("click", function () {
 
     let balance = parseFloat(balanceText.innerText);
 
+    if (balance < savingAmount) {
+        alert("Porjapto balance nei");
+    }
+
     let remainingText = selectFunction("remaining-balance");
     // Remaining Balance
     let remainingBalance = balance - updateSavingAmount;
@@ -49,3 +57,4 @@ document.getElementById("save-button").addEventListener("click", function () {
     remainingText.innerText = remainingBalance;
 
 })
+
